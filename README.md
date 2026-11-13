@@ -31,9 +31,9 @@ Copyright (c) 2026 Teujaem
 
 ### 접속방법
 
-http://localhost:8080 (config에서 수정용)
-http://localhost:8080/bidirectional (가운데)
-http://localhost:8080/unidirectional (왼쪽)
+- http://localhost:8080 (config에서 수정용)
+- http://localhost:8080/bidirectional (가운데)
+- http://localhost:8080/unidirectional (왼쪽)
 
 
 ## 사용 라이브러리
