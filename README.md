@@ -29,6 +29,8 @@ Copyright (c) 2026 Teujaem
 
 맥 이용 시 권한 설정이 필요합니다
 
+예제 파일은 ./starter/ 에 있습니다
+
 ### 접속방법
 
 - http://localhost:8080 (config에서 수정용)
