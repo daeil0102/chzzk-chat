@@ -8,7 +8,7 @@ public class ConfigManger {
     public static final Layout DEFAULT_LAYOUT = defaultLayout("bidirectional");
 
     public record Channel(String id, String name) {}
-    public record Layout(int chatGap, int iconSize, int fontSize, int maxChatWidth, int topBarOffset,
+    public record Layout(int chatGap, int iconSize, int fontSize, Map<Integer, Integer> messageFontScale, int maxChatWidth, int topBarOffset,
                          String growthDirection, int sideWidth, int iconOffsetX, int iconOffsetY,
                          int iconMotionDistance, int iconMotionDurationMs, String horizontalGrowth,
                          String chatAlign, int cardRadius, int chatMotionX, int chatMotionY,
@@ -36,7 +36,7 @@ public class ConfigManger {
     }
 
     private static Layout defaultLayout(String mode) {
-        return new Layout(0, 130, 60, 0, 10, "up", 48, 0, 0, 3, 2800, mode, "auto", 0, 0, 0, 4000, 350);
+        return new Layout(0, 130, 60, Map.of(1, 80, 2, 50), 0, 10, "up", 48, 0, 0, 3, 2800, mode, "auto", 0, 0, 0, 4000, 350);
     }
 
     public String getId() {

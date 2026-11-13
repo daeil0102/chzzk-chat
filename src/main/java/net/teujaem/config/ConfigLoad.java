@@ -101,6 +101,7 @@ public class ConfigLoad {
                 readInteger(profile, "chatGap", defaults.chatGap()),
                 readPixels(profile, "iconSize", defaults.iconSize()),
                 readPixels(profile, "fontSize", defaults.fontSize()),
+                readMessageFontScale(profile, defaults.messageFontScale()),
                 readPixels(profile, "maxChatWidth", defaults.maxChatWidth()),
                 readPixels(profile, "topBarOffset", defaults.topBarOffset()),
                 (String) direction,
@@ -116,6 +117,30 @@ public class ConfigLoad {
                 readPixels(profile, "chatMotionY", defaults.chatMotionY()),
                 readNonNegativeInteger(profile, "chatMotionDurationMs", defaults.chatMotionDurationMs(), "ms"),
                 readNonNegativeInteger(profile, "chatMotionStaggerMs", defaults.chatMotionStaggerMs(), "ms"));
+    }
+
+    private static Map<Integer, Integer> readMessageFontScale(Map<?, ?> profile, Map<Integer, Integer> defaults) {
+        if (!profile.containsKey("messageFontScale")) {
+            return defaults;
+        }
+        if (!(profile.get("messageFontScale") instanceof Map<?, ?> scales)) {
+            throw new IllegalArgumentException("messageFontScale에 줄 수별 글자 크기 비율을 지정하세요.");
+        }
+        Map<Integer, Integer> result = new LinkedHashMap<>();
+        for (var entry : scales.entrySet()) {
+            if (!(entry.getKey() instanceof Integer lines) || lines < 1) {
+                throw new IllegalArgumentException("messageFontScale의 줄 수는 1 이상의 정수여야 합니다.");
+            }
+            Object value = entry.getValue();
+            if (value instanceof String percent && percent.matches("[1-9][0-9]?%|100%")) {
+                value = Integer.parseInt(percent.substring(0, percent.length() - 1));
+            }
+            if (!(value instanceof Integer percent) || percent < 1 || percent > 100) {
+                throw new IllegalArgumentException("messageFontScale의 비율은 1%부터 100%까지 지정할 수 있습니다.");
+            }
+            result.put(lines, percent);
+        }
+        return Map.copyOf(result);
     }
 
     private void createProfile(String mode, String previousMode, Map<?, ?> legacy) {

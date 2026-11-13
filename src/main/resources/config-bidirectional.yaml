@@ -5,6 +5,12 @@ chatGap: 0
 iconSize: 130
 # 채팅 본문 글자 크기 (px) / Chat message font size (px)
 fontSize: 60
+
+# 기본 글자 크기로 줄 수를 센 뒤 아래 비율을 적용합니다. 비어 있는 줄 수는 가장 가까운 낮은 설정을 사용합니다.
+# Scale by line count at the base size. Missing counts use the nearest lower rule. Use {} to disable.
+messageFontScale:
+  1: 80%
+  2: 50%
 # 채팅 카드 최대 가로 너비 (px, 0이면 화면 너비까지) / Maximum chat card width (px, 0 uses the viewport width)
 maxChatWidth: 0
 # 상단 띠와 아이콘을 위로 올리는 거리 (px) / Upward offset of the top bar and icon (px)
