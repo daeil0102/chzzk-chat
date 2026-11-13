@@ -1,0 +1,9 @@
+# 공통 설정 / Shared settings
+# 화면 설정은 config-bidirectional.yaml 또는 config-unidirectional.yaml에서 변경하세요. / Edit appearance in config-bidirectional.yaml or config-unidirectional.yaml.
+
+# 웹 서버 포트 (기본값: 8080) / Web server port (default: 8080)
+port: 8080
+# 치지직 채널 ID / CHZZK channel ID
+channels: "6da53094da0fbfb065546fa402d59437"
+# 카드 가로 확장 방향 (bidirectional: 양옆, unidirectional: 왼쪽) / Horizontal card growth (bidirectional or unidirectional)
+horizontalGrowth: bidirectional

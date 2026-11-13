@@ -1,0 +1,44 @@
+plugins {
+    id 'application'
+}
+
+group = 'net.teujaem'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+dependencies {
+    implementation 'io.github.r2turntrue:chzzk4j:0.1.7'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.yaml:snakeyaml:2.4'
+}
+
+application {
+    mainClass = 'net.teujaem.Main'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
+
+tasks.named('jar') {
+    archiveFileName = 'server.jar'
+    manifest.attributes('Main-Class': application.mainClass.get())
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { zipTree(it) }
+    }
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', '**/module-info.class'
+}

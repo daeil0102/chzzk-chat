@@ -1,0 +1,42 @@
+# unidirectional 모드 화면 설정 / unidirectional mode appearance settings
+
+# 채팅 카드 사이 간격 (px, 음수 허용) / Gap between chat cards (px, negatives allowed)
+chatGap: 10
+
+# 카드 위 아이콘 크기 (px, 0이면 숨김) / Icon size above the card (px, 0 hides it)
+iconSize: 70
+
+# 채팅 본문 글자 크기 (px) / Chat message font size (px)
+fontSize: 65
+
+# 채팅 카드 최대 가로 너비 (px, 0이면 화면 너비까지) / Maximum chat card width (px, 0 uses the viewport width)
+maxChatWidth: 0
+
+# 여러 줄 채팅이 늘어나는 방향 (up: 위, down: 아래) / Multiline chat growth direction (up or down)
+growthDirection: up
+
+# 좌우 장식 이미지 각각의 너비 (px) / Width of each side decoration (px)
+sideWidth: 60
+
+# 아이콘 가로 위치 (px, 양수는 오른쪽) / Icon X offset (px, positive moves right)
+iconOffsetX: -70
+# 아이콘 세로 위치 (px, 양수는 아래) / Icon Y offset (px, positive moves down)
+iconOffsetY: 80
+
+# 아이콘이 위로 움직이는 거리 (px, 0이면 멈춤) / Icon upward movement distance (px, 0 stops it)
+iconMotionDistance: 0
+# 아이콘 편도 이동 시간 (ms, 0이면 멈춤) / Icon one-way movement time (ms, 0 stops it)
+iconMotionDurationMs: 200
+# 카드 정렬 (auto: 확장 방향에 맞춤, left: 왼쪽, center: 가운데, right: 오른쪽) / Chat card alignment (auto, left, center, right)
+chatAlign: auto
+
+# 카드 모서리 둥글기 (px, 0이면 각진 모서리) / Card corner radius (px, 0 gives square corners)
+cardRadius: 50
+
+# 채팅 목록이 중앙에서 좌우·상하로 이동하는 거리 (px, 0이면 해당 축 정지) / Chat list travel from rest on each axis (px, 0 disables that axis)
+chatMotionX: 0
+chatMotionY: 0
+# 왕복 한 번에 걸리는 시간 (ms, 0이면 전체 이동 끔) / Full round-trip duration (ms, 0 disables movement)
+chatMotionDurationMs: 4000
+# 카드마다 좌우 움직임이 어긋나는 시간 (ms, 0이면 동시에 이동) / Horizontal phase delay per card (ms, 0 moves together)
+chatMotionStaggerMs: 350

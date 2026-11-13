@@ -1,0 +1,10 @@
+# 공통 설정 / Shared settings
+# 화면 설정은 config-bidirectional.yaml 또는 config-unidirectional.yaml에서 변경하세요. / Edit appearance in config-bidirectional.yaml or config-unidirectional.yaml.
+
+port: 8080
+# 치지직 채널 ID를 입력하세요. 여러 채널을 추가할 수 있습니다. / Enter CHZZK channel IDs. Multiple channels are supported.
+channels:
+  - id: ""
+
+# 카드 가로 확장 방향 (bidirectional: 양옆, unidirectional: 왼쪽) / Horizontal card growth (bidirectional or unidirectional)
+horizontalGrowth: bidirectional
